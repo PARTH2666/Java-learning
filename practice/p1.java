@@ -1,15 +1,24 @@
+
 // Temperature converter: convert 36.6 °C to Fahrenheit using F = C * 9 / 5 + 32. Use final for the constants where it makes sense.
+import java.util.Scanner;
 
 public class p1 {
 
     public static void main(String[] args) {
-        temperature();
-        secondConvo();
-        digitTool();
-        circleRadius();
-        leapYear();
-        bigInt();
-        triangleValidity();
+        // temperature();
+        // secondConvo();
+        // digitTool();
+        // circleRadius();
+        // leapYear();
+        // bigInt();
+        // triangleValidity();
+        // evenOrOdd();
+        // numberType();
+        // largestNumber();
+        // leapYearWithInput();
+        // passwordChecker();
+        // ElectricityBill();
+        triangleType();
     }
 
     static void temperature() {
@@ -76,4 +85,124 @@ public class p1 {
         boolean validity = a + b > c && a + c > b && b + c > a;
         System.out.println(validity);
     }
+
+    static void evenOrOdd() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number: ");
+        int number = sc.nextInt();
+
+        // System.out.println(number);
+
+        if (number % 2 == 0) {
+            System.out.println("The number " + number + " is even");
+        } else {
+            System.out.println("The number " + number + " is odd");
+        }
+    }
+
+    static void numberType() {
+        // positive, negative or zero
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int number = sc.nextInt();
+
+        if (number == 0) {
+            System.out.println("The entered number is Zero");
+        } else if (number > 0) {
+            System.out.println("The number id positive");
+
+        } else {
+            System.out.println("The number is negative");
+        }
+    }
+
+    static void largestNumber() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the numbers: ");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int num3 = sc.nextInt();
+
+        if (num1 > num2) {
+            if (num1 > num3) {
+                System.out.println("The largest number is: " + num1);
+            } else {
+                System.out.println("The largest number is: " + num3);
+            }
+        } else {
+            if (num2 > num3) {
+                System.out.println("The largest number is: " + num2);
+            } else {
+                System.out.println("The largest number is: " + num3);
+            }
+        }
+    }
+
+    static void leapYearWithInput() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the year: ");
+        int year = sc.nextInt();
+
+        if ((year % 4 == 0) && (year % 100 != 0)) {
+            System.out.println("The year " + year + " is a leap year ");
+        } else {
+            System.out.println("The year " + year + " is not a leap year ");
+        }
+    }
+
+    static void passwordChecker() {
+        String pass = "java123";
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the Password: ");
+        String userpassword = sc.nextLine();
+
+        if (userpassword.equals(pass)) {
+            System.out.println("Login successful");
+        } else {
+            System.out.println("Opps!, Login unsuccessful");
+        }
+
+    }
+
+    static void ElectricityBill() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter brunt unit: ");
+        int unit = sc.nextInt();
+
+        int totalBill = 0;
+
+        if (unit <= 100) {
+            totalBill = unit * 5;
+        } else if (unit <= 200) {
+            totalBill = (100 * 5) + ((unit - 100) * 7);
+        }
+
+        if (unit > 200) {
+            totalBill = (100 * 5) + (100 * 7) + ((unit - 200) * 10);
+        }
+
+        System.out.println("Your bill is " + totalBill);
+    }
+
+    static void triangleType() {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter three sides: ");
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int c = sc.nextInt();
+
+    if (!(a + b > c && a + c > b && b + c > a)) {
+        System.out.println("Not a valid triangle");
+    } else if (a == b && b == c) {
+        System.out.println("Equilateral");
+    } else if (a == b || b == c || a == c) {
+        System.out.println("Isosceles");
+    } else {
+        System.out.println("Scalene");
+    }
+}
 }
