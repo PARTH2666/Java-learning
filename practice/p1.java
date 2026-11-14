@@ -18,7 +18,10 @@ public class p1 {
         // leapYearWithInput();
         // passwordChecker();
         // ElectricityBill();
-        triangleType();
+        // triangleType();
+        // dayOfWeek();
+        VowelOrConsonant();
+
     }
 
     static void temperature() {
@@ -189,20 +192,87 @@ public class p1 {
     }
 
     static void triangleType() {
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Enter three sides: ");
-    int a = sc.nextInt();
-    int b = sc.nextInt();
-    int c = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter three sides: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
 
-    if (!(a + b > c && a + c > b && b + c > a)) {
-        System.out.println("Not a valid triangle");
-    } else if (a == b && b == c) {
-        System.out.println("Equilateral");
-    } else if (a == b || b == c || a == c) {
-        System.out.println("Isosceles");
-    } else {
-        System.out.println("Scalene");
+        if (!(a + b > c && a + c > b && b + c > a)) {
+            System.out.println("Not a valid triangle");
+        } else if (a == b && b == c) {
+            System.out.println("Equilateral");
+        } else if (a == b || b == c || a == c) {
+            System.out.println("Isosceles");
+        } else {
+            System.out.println("Scalene");
+        }
     }
-}
+
+    static void dayOfWeek() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the day: ");
+        int dayNumber = sc.nextInt();
+
+        // normal switch case
+        switch (dayNumber) {
+            case 1:
+                System.out.println("Sunday");
+                break;
+            case 2:
+                System.out.println("Monday");
+                break;
+            case 3:
+                System.out.println("Tuesday");
+                break;
+            case 4:
+                System.out.println("Wednesday");
+                break;
+            case 5:
+                System.out.println("Thursday");
+                break;
+            case 6:
+                System.out.println("Friday");
+                break;
+            case 7:
+                System.out.println("Saturday");
+                break;
+            default:
+                System.out.println("No match found!");
+                break;
+        }
+
+        switch (dayNumber) {
+            case 1 -> System.out.println("Sunday");
+            case 2 -> System.out.println("Monday");
+            case 3 -> System.out.println("Tuesday");
+            case 4 -> System.out.println("Thursday");
+            case 5 -> System.out.println("Friday");
+            case 6 -> System.out.println("Saturday");
+            case 7 -> System.out.println("Sunday");
+            default -> System.out.println("No match found!");
+        }
+    }
+
+    static void VowelOrConsonant() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the character: ");
+
+        char chatracter = sc.next().toLowerCase().charAt(0);
+
+        if (!Character.isLetter(chatracter)) {
+            System.out.println("not a valid character!");
+        } else {
+            switch (chatracter) {
+                case 'a', 'e', 'i', 'o', 'u' ->
+                    System.out.println("The Entered Character " + chatracter + " is a vowel");
+                default -> System.out.println("The Entered Character " + chatracter + " is a consonant");
+            }
+        }
+
+    }
+
 }
